@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material name="Rubber_Used" version_exporter="10" version_rpr="0x10032100" closure_node="Uber_0">
+    <description></description>
+    <node name="node0" type="IMAGE_TEXTURE">
+        <param name="uv" type="connection" value="node2"/>
+        <param name="data" type="connection" value="node5"/>
+    </node>
+    <node name="node1" type="BUMP_MAP">
+        <param name="color" type="connection" value="node0"/>
+        <param name="bumpscale" type="float4" value="0.2, 0.2, 0.2, 0.2"/>
+    </node>
+    <node name="node2" type="INPUT_LOOKUP">
+        <param name="value" type="uint" value="0"/>
+    </node>
+    <node name="node3" type="INPUT_LOOKUP">
+        <param name="value" type="uint" value="0"/>
+    </node>
+    <node name="node4" type="IMAGE_TEXTURE">
+        <param name="uv" type="connection" value="node3"/>
+        <param name="data" type="connection" value="node5"/>
+    </node>
+    <node name="Uber_0" type="UBER">
+        <param name="diffuse.color" type="float4" value="0.00784314, 0.00784314, 0.00784314, 0"/>
+        <param name="diffuse.weight" type="float4" value="0.6, 0.6, 0.6, 0.6"/>
+        <param name="diffuse.roughness" type="float4" value="0.5, 0.5, 0.5, 0.5"/>
+        <param name="diffuse.normal" type="connection" value="node1"/>
+        <param name="reflection.color" type="float4" value="0.341176, 0.341176, 0.341176, 0"/>
+        <param name="reflection.weight" type="float4" value="1, 1, 1, 1"/>
+        <param name="reflection.roughness" type="connection" value="node4"/>
+        <param name="reflection.anisotropy" type="float4" value="0, 0, 0, 0"/>
+        <param name="reflection.anistropyRotation" type="float4" value="0, 0, 0, 0"/>
+        <param name="reflection.mode" type="uint" value="1"/>
+        <param name="reflection.ior" type="float4" value="1.6, 1.6, 1.6, 1.6"/>
+        <param name="reflection.normal" type="connection" value="node1"/>
+        <param name="refraction.color" type="float4" value="1, 1, 1, 1"/>
+        <param name="refraction.weight" type="float4" value="0, 0, 0, 0"/>
+        <param name="refraction.roughness" type="float4" value="0, 0, 0, 0"/>
+        <param name="refraction.ior" type="float4" value="1.5, 1.5, 1.5, 1.5"/>
+        <param name="refraction.thinSurface" type="uint" value="0"/>
+        <param name="refraction.absorptionColor" type="float4" value="1, 1, 1, 0"/>
+        <param name="refraction.absorptionDistance" type="float4" value="1, 1, 1, 0"/>
+        <param name="refraction.caustics" type="uint" value="1"/>
+        <param name="coating.color" type="float4" value="1, 1, 1, 1"/>
+        <param name="coating.weight" type="float4" value="0, 0, 0, 0"/>
+        <param name="coating.roughness" type="float4" value="0, 0, 0, 0"/>
+        <param name="coating.mode" type="uint" value="1"/>
+        <param name="coating.ior" type="float4" value="3, 3, 3, 3"/>
+        <param name="coating.metalness" type="float4" value="0, 0, 0, 0"/>
+        <param name="coating.transmissionColor" type="float4" value="1, 1, 1, 1"/>
+        <param name="coating.thickness" type="float4" value="0, 0, 0, 0"/>
+        <param name="sheen" type="float4" value="1, 1, 1, 1"/>
+        <param name="sheen.tint" type="float4" value="0, 0, 0, 0"/>
+        <param name="sheen.weight" type="float4" value="0, 0, 0, 0"/>
+        <param name="emission.color" type="float4" value="1, 1, 1, 1"/>
+        <param name="emission.weight" type="float4" value="0, 0, 0, 0"/>
+        <param name="emission.mode" type="uint" value="1"/>
+        <param name="transparency" type="float4" value="0, 0, 0, 0"/>
+        <param name="sss.scatterColor" type="float4" value="0, 0, 0, 0"/>
+        <param name="sss.scatterDistance" type="float4" value="0, 0, 0, 0"/>
+        <param name="sss.scatterDirection" type="float4" value="0, 0, 0, 0"/>
+        <param name="sss.weight" type="float4" value="0, 0, 0, 0"/>
+        <param name="sss.multiscatter" type="uint" value="0"/>
+        <param name="backscatter.weight" type="float4" value="0, 0, 0, 0"/>
+        <param name="backscatter.color" type="float4" value="1, 1, 1, 1"/>
+    </node>
+    <node name="node5" type="INPUT_TEXTURE">
+        <param name="path" type="file_path" value="../Maps/rubber_Used_spec.jpg"/>
+        <param name="gamma" type="float" value="1.000000"/>
+    </node>
+</material>

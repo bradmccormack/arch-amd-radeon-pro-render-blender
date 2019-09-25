@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material name="Emissive_Fluorescent_Magenta" version_exporter="10" version_rpr="0x10032100" closure_node="Emissive_Fluorescent_Magenta">
+    <description></description>
+    <node name="node0" type="INPUT_LOOKUP">
+        <param name="value" type="uint" value="3"/>
+    </node>
+    <node name="node1" type="INPUT_LOOKUP">
+        <param name="value" type="uint" value="1"/>
+    </node>
+    <node name="node2" type="ARITHMETIC">
+        <param name="color0" type="float4" value="1, 1, 1, 1"/>
+        <param name="color1" type="connection" value="node7"/>
+        <param name="op" type="uint" value="1"/>
+    </node>
+    <node name="node3" type="BLEND_VALUE">
+        <param name="color0" type="float4" value="0, 0, 0, 0"/>
+        <param name="color1" type="float4" value="1, 1, 1, 0"/>
+        <param name="weight" type="connection" value="node8"/>
+    </node>
+    <node name="node4" type="ARITHMETIC">
+        <param name="color0" type="connection" value="node1"/>
+        <param name="color1" type="connection" value="node0"/>
+        <param name="op" type="uint" value="11"/>
+    </node>
+    <node name="node5" type="ARITHMETIC">
+        <param name="color0" type="connection" value="node6"/>
+        <param name="color1" type="float4" value="0.00390625, 0.00390625, 0.00390625, 0.00390625"/>
+        <param name="op" type="uint" value="0"/>
+    </node>
+    <node name="Emissive_Fluorescent_Magenta" type="BLEND">
+        <param name="color0" type="connection" value="Material #79"/>
+        <param name="color1" type="connection" value="Material #78"/>
+        <param name="weight" type="connection" value="node3"/>
+    </node>
+    <node name="Material #78" type="EMISSIVE">
+        <param name="color" type="float4" value="0.196078, 0, 0.466667, 0"/>
+    </node>
+    <node name="node6" type="ARITHMETIC">
+        <param name="color0" type="connection" value="node2"/>
+        <param name="color1" type="float4" value="0.992188, 0.992188, 0.992188, 0.992188"/>
+        <param name="op" type="uint" value="2"/>
+    </node>
+    <node name="Material #79" type="EMISSIVE">
+        <param name="color" type="float4" value="0.619608, 0, 0.796079, 0"/>
+    </node>
+    <node name="node7" type="ARITHMETIC">
+        <param name="color0" type="connection" value="node4"/>
+        <param name="op" type="uint" value="25"/>
+    </node>
+    <node name="node8" type="IMAGE_TEXTURE">
+        <param name="uv" type="connection" value="node5"/>
+        <param name="data" type="connection" value="node9"/>
+    </node>
+    <node name="node9" type="INPUT_TEXTURE">
+        <param name="path" type="file_path" value="Emissive_Fluorescent_Magenta_tex_0.png"/>
+        <param name="gamma" type="float" value="1.000000"/>
+    </node>
+</material>

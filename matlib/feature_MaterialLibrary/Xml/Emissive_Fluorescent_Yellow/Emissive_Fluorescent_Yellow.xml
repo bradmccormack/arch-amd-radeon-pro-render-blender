@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material name="Emissive_Fluorescent_Yellow" version_exporter="10" version_rpr="0x10032100" closure_node="Emissive_Fluorescent_Yellow">
+    <description></description>
+    <node name="node0" type="BLEND_VALUE">
+        <param name="color0" type="float4" value="0, 0, 0, 0"/>
+        <param name="color1" type="float4" value="1, 1, 1, 0"/>
+        <param name="weight" type="connection" value="node1"/>
+    </node>
+    <node name="node1" type="ARITHMETIC">
+        <param name="color0" type="float4" value="1, 1, 1, 1"/>
+        <param name="color1" type="connection" value="node2"/>
+        <param name="op" type="uint" value="1"/>
+    </node>
+    <node name="Material #78" type="EMISSIVE">
+        <param name="color" type="float4" value="0.945098, 0.94902, 0.054902, 0"/>
+    </node>
+    <node name="Material #79" type="EMISSIVE">
+        <param name="color" type="float4" value="0.933333, 0, 0, 0"/>
+    </node>
+    <node name="node2" type="ARITHMETIC">
+        <param name="color0" type="connection" value="node4"/>
+        <param name="op" type="uint" value="25"/>
+    </node>
+    <node name="node3" type="INPUT_LOOKUP">
+        <param name="value" type="uint" value="1"/>
+    </node>
+    <node name="Emissive_Fluorescent_Yellow" type="BLEND">
+        <param name="color0" type="connection" value="Material #78"/>
+        <param name="color1" type="connection" value="Material #79"/>
+        <param name="weight" type="connection" value="node0"/>
+    </node>
+    <node name="node4" type="ARITHMETIC">
+        <param name="color0" type="connection" value="node3"/>
+        <param name="color1" type="connection" value="node5"/>
+        <param name="op" type="uint" value="11"/>
+    </node>
+    <node name="node5" type="INPUT_LOOKUP">
+        <param name="value" type="uint" value="3"/>
+    </node>
+</material>

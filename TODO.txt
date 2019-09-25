@@ -1,0 +1,30 @@
+
+TODO
+
+# Make this a markdown file and clean it up.
+
+Make an Arch Linux package that installs the AMD Pro renderer for Blender.
+
+The dependencies appear to be
+
+- opencl-amd or the pro AMD driver - Attempt to support both with precedence for the open version (what I'm using on my Vega)
+- dpkg (or I might have to update the embedded python script)
+- python3
+- blender (initially support the non AUR one only until it's working then investigate Git version)
+
+
+Initial looking around
+
+# Make the run file executable (It's made with something called makeself)
+chmod +x ./radeonprorenderforblender.run
+
+# Extract the embedded contents and move and git init
+./radeonprorenderforblender.run --target /tmp/radeonprorenderforblender
+
+Understand how it detects the OS version and add support for Arch and use pacman rather than dpkg
+Get it working (also for uninstall) and create an AUR package + submit the change to AMD to add official support for Arch.
+
+It also asks where Blender is installed and that the Eula is read. Detect the location automatically and automatically accept the Euala (perhaps ...)
+
+Also detect the version of the renderer and Blender and report to the user.
+ 
